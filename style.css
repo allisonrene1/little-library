@@ -2,6 +2,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  touch-action: manipulation;
 }
 
 /* section for the buttons */
@@ -54,7 +55,7 @@ body {
 }
 
 .headerLogo img {
-  margin-left: 10px; /* Optional: Add some spacing between the image and text */
+  margin-left: 10px;
 }
 
 .librarySection,
@@ -111,9 +112,9 @@ body {
 .modalBody {
   margin-left: 1rem;
   display: flex;
-  flex-direction: column; /* Stack items in a column */
-  gap: 0.5rem; /* Adjust the gap between items as needed */
-  padding: 1rem 1rem 1rem 0; /* Add padding for better spacing */
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 1rem 1rem 0;
 }
 
 .modalBody label {
