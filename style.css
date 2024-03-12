@@ -74,6 +74,7 @@ body {
   transform: translate(-50%, -50%);
   transition: visibility 0s, opacity 0.5s ease-in-out;
   z-index: 9999;
+  touch-action: manipulation;
 }
 
 @media (max-width: 768px) {
@@ -127,6 +128,7 @@ body {
   padding: 0.5rem;
   box-sizing: border-box;
   margin-bottom: 1rem;
+  touch-action: manipulation;
 }
 
 .modalBody .formCheck {
