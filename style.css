@@ -15,25 +15,25 @@ body {
   font-weight: bold;
   border-radius: 10px;
   transition: background-color 0.3s, color 0.3s;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
 }
 .btn:hover,
 .btnCardDelete:hover {
   background-color: #eb9234;
   color: #fffdfa;
   border: solid 2px #995002;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
 }
 .btn:active,
 .btnCardDelete:active {
   box-shadow: 0 0 10px rgba(201, 75, 2, 0.797);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
 }
 
 .libraryDisplayWindow {
