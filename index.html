@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Allison's Library</title>
+  </head>
+  <body>
+    <div class="libraryDisplayWindow">
+      <!--Header section-->
+      <div class="header">
+        <div class="headerLogo">
+          <img src="/bookicon.png" />
+          <h1 class="headerTitle">Little Library</h1>
+        </div>
+        <button type="button" class="btn btn-addBook" id="addBookButton">
+          Add Book
+        </button>
+      </div>
+      <hr class="divider" />
+      <!--Library section-->
+      <div class="librarySection">
+        <div class="emptyLibrary">
+          <!--Appears if user hasn't logged any books-->
+          <div class="emptyLibraryHeader">
+            <h2 class="libraryTitle">Your reading list is empty!</h2>
+          </div>
+          <div class="emptyLibrarySubtext">
+            <p class="librarySubtext">
+              Click the "Add Book" button above to save a new book.
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr class="divider" />
+      <!--Footer section-->
+      <div class="footer">
+        <h3 class="footerTitle">What is this page?</h3>
+        <p class="footerSubtext">
+          A small application to save books you've read or are still currently
+          reading. My first project implementing objects and object instances in
+          JavaScript. Will add more features to this in the future╰(*°▽°*)╯
+        </p>
+      </div>
+      <div class="modalFadeWindow" id="addBookModal" style="visibility: hidden">
+        <div class="modalDialog">
+          <div class="modalContent">
+            <div class="modalHeader">
+              <h4 class="modalTitle" id="addBookModalTitle">Add Book</h4>
+            </div>
+            <div class="modalBody">
+              <form name="addBookForm">
+                <label for="inputBookTitle" class="form-label">Title</label>
+                <input
+                  class="form-control"
+                  id="inputBookTitle"
+                  name="inputBookTitle"
+                  placeholder="Ex: Harry Potter"
+                  maxlength="50"
+                  required
+                />
+                <label for="inputBookAuthor" class="form-label">Author</label>
+                <input
+                  class="form-control"
+                  id="inputBookAuthor"
+                  name="inputBookAuthor"
+                  placeholder="Ex: J.K. Rowling"
+                  maxlength="50"
+                  required
+                />
+                <label for="inputBookRating" class="form-label">Rating</label>
+                <div class="bookRatingStars">
+                  <button
+                    id="inputBookRating"
+                    type="button"
+                    aria-label="Rate 1 out of 5"
+                    class="ratingStar"
+                    onclick="rate(1)"
+                  >
+                    <svg width="24" height="24">
+                      <path
+                        d="M24 9.63469C24 9.35683 23.7747 9.13158 23.4969 9.13158H15.0892L12.477 1.34327C12.4269 1.19375 12.3095 1.0764 12.16 1.02625C11.8966 0.937894 11.6114 1.07983 11.523 1.34327L8.91088 9.13158H0.503157C0.33975 9.13158 0.186521 9.21094 0.0922364 9.3444C-0.0680877 9.57134 -0.0140806 9.88529 0.212865 10.0456L7.00408 14.8432L4.40172 22.6166C4.35092 22.7683 4.37534 22.9352 4.46749 23.066C4.6275 23.2932 4.94137 23.3476 5.16853 23.1876L12 18.3758L18.8317 23.183C18.9625 23.2751 19.1293 23.2994 19.281 23.2486C19.5445 23.1604 19.6865 22.8752 19.5983 22.6117L16.996 14.8432L23.7872 10.0456C23.9206 9.95133 24 9.7981 24 9.63469Z"
+                      ></path>
+                    </svg>
+                  </button>
+                  <button
+                    id="inputBookRating"
+                    type="button"
+                    aria-label="Rate 2 out of 5"
+                    class="ratingStar"
+                    onclick="rate(2)"
+                  >
+                    <svg width="24" height="24">
+                      <path
+                        d="M24 9.63469C24 9.35683 23.7747 9.13158 23.4969 9.13158H15.0892L12.477 1.34327C12.4269 1.19375 12.3095 1.0764 12.16 1.02625C11.8966 0.937894 11.6114 1.07983 11.523 1.34327L8.91088 9.13158H0.503157C0.33975 9.13158 0.186521 9.21094 0.0922364 9.3444C-0.0680877 9.57134 -0.0140806 9.88529 0.212865 10.0456L7.00408 14.8432L4.40172 22.6166C4.35092 22.7683 4.37534 22.9352 4.46749 23.066C4.6275 23.2932 4.94137 23.3476 5.16853 23.1876L12 18.3758L18.8317 23.183C18.9625 23.2751 19.1293 23.2994 19.281 23.2486C19.5445 23.1604 19.6865 22.8752 19.5983 22.6117L16.996 14.8432L23.7872 10.0456C23.9206 9.95133 24 9.7981 24 9.63469Z"
+                      ></path>
+                    </svg>
+                  </button>
+                  <button
+                    id="inputBookRating"
+                    type="button"
+                    aria-label="Rate 3 out of 5"
+                    class="ratingStar"
+                    onclick="rate(3)"
+                  >
+                    <svg width="24" height="24">
+                      <path
+                        d="M24 9.63469C24 9.35683 23.7747 9.13158 23.4969 9.13158H15.0892L12.477 1.34327C12.4269 1.19375 12.3095 1.0764 12.16 1.02625C11.8966 0.937894 11.6114 1.07983 11.523 1.34327L8.91088 9.13158H0.503157C0.33975 9.13158 0.186521 9.21094 0.0922364 9.3444C-0.0680877 9.57134 -0.0140806 9.88529 0.212865 10.0456L7.00408 14.8432L4.40172 22.6166C4.35092 22.7683 4.37534 22.9352 4.46749 23.066C4.6275 23.2932 4.94137 23.3476 5.16853 23.1876L12 18.3758L18.8317 23.183C18.9625 23.2751 19.1293 23.2994 19.281 23.2486C19.5445 23.1604 19.6865 22.8752 19.5983 22.6117L16.996 14.8432L23.7872 10.0456C23.9206 9.95133 24 9.7981 24 9.63469Z"
+                      ></path>
+                    </svg>
+                  </button>
+                  <button
+                    id="inputBookRating"
+                    type="button"
+                    aria-label="Rate 4 out of 5"
+                    class="ratingStar"
+                    onclick="rate(4)"
+                  >
+                    <svg width="24" height="24">
+                      <path
+                        d="M24 9.63469C24 9.35683 23.7747 9.13158 23.4969 9.13158H15.0892L12.477 1.34327C12.4269 1.19375 12.3095 1.0764 12.16 1.02625C11.8966 0.937894 11.6114 1.07983 11.523 1.34327L8.91088 9.13158H0.503157C0.33975 9.13158 0.186521 9.21094 0.0922364 9.3444C-0.0680877 9.57134 -0.0140806 9.88529 0.212865 10.0456L7.00408 14.8432L4.40172 22.6166C4.35092 22.7683 4.37534 22.9352 4.46749 23.066C4.6275 23.2932 4.94137 23.3476 5.16853 23.1876L12 18.3758L18.8317 23.183C18.9625 23.2751 19.1293 23.2994 19.281 23.2486C19.5445 23.1604 19.6865 22.8752 19.5983 22.6117L16.996 14.8432L23.7872 10.0456C23.9206 9.95133 24 9.7981 24 9.63469Z"
+                      ></path>
+                    </svg>
+                  </button>
+                  <button
+                    id="inputBookRating"
+                    type="button"
+                    aria-label="Rate 5 out of 5"
+                    class="ratingStar"
+                    onclick="rate(5)"
+                  >
+                    <svg width="24" height="24">
+                      <path
+                        d="M24 9.63469C24 9.35683 23.7747 9.13158 23.4969 9.13158H15.0892L12.477 1.34327C12.4269 1.19375 12.3095 1.0764 12.16 1.02625C11.8966 0.937894 11.6114 1.07983 11.523 1.34327L8.91088 9.13158H0.503157C0.33975 9.13158 0.186521 9.21094 0.0922364 9.3444C-0.0680877 9.57134 -0.0140806 9.88529 0.212865 10.0456L7.00408 14.8432L4.40172 22.6166C4.35092 22.7683 4.37534 22.9352 4.46749 23.066C4.6275 23.2932 4.94137 23.3476 5.16853 23.1876L12 18.3758L18.8317 23.183C18.9625 23.2751 19.1293 23.2994 19.281 23.2486C19.5445 23.1604 19.6865 22.8752 19.5983 22.6117L16.996 14.8432L23.7872 10.0456C23.9206 9.95133 24 9.7981 24 9.63469Z"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="formCheck">
+                  <div class="formCheckFinished">
+                    <label class="form-check-label" for="inputBookReadFinished"
+                      >Finished</label
+                    >
+                    <input
+                      type="radio"
+                      class="form-check-input"
+                      id="Finished"
+                      name="bookReadStatus"
+                    />
+                  </div>
+                  <div class="formCheckStillReading">
+                    <label
+                      class="form-check-label"
+                      for="inputBookReadStillReading"
+                      >Still reading</label
+                    >
+                    <input
+                      type="radio"
+                      class="form-check-input"
+                      id="Still reading"
+                      name="bookReadStatus"
+                    />
+                  </div>
+                </div>
+                <div class="modalFooter">
+                  <button
+                    type="button"
+                    class="btn btn-cancel"
+                    id="addBookModalCancelButton"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    class="btn btn-save"
+                    id="addBookModalSaveButton"
+                    type="submit"
+                  >
+                    Save
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

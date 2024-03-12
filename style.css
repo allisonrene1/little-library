@@ -1,0 +1,208 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* section for the buttons */
+.btn,
+.btnCardDelete {
+  padding: 8px 8px;
+  color: black;
+  background-color: white;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+.btn:hover,
+.btnCardDelete:hover {
+  background-color: #eb9234;
+  color: #fffdfa;
+  border: solid 2px #995002;
+}
+.btn:active,
+.btnCardDelete:active {
+  box-shadow: 0 0 10px rgba(201, 75, 2, 0.797);
+}
+
+.libraryDisplayWindow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  border: solid 1px orange;
+  border-radius: 5px;
+}
+
+.librarySection,
+.footer {
+  margin-bottom: 2rem;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerLogo img {
+  margin-left: 10px; /* Optional: Add some spacing between the image and text */
+}
+
+.librarySection,
+.footer {
+  text-align: center;
+}
+
+.footer {
+  width: 60%;
+}
+
+.modalFadeWindow {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: visibility 0s, opacity 0.5s ease-in-out;
+  z-index: 9999;
+}
+
+@media (max-width: 768px) {
+  .modalFadeWindow {
+    width: 365px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -73%);
+  }
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 10px;
+  border: solid 1px black;
+  background-color: #faebcf;
+}
+
+.modalHeader {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.modalHeader h4 {
+  margin: 0;
+  font-size: larger;
+  font-family: "Merriweather", serif;
+  padding: 0;
+}
+
+.modalBody {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column; /* Stack items in a column */
+  gap: 0.5rem; /* Adjust the gap between items as needed */
+  padding: 1rem 1rem 1rem 0; /* Add padding for better spacing */
+}
+
+.modalBody label {
+  font-weight: bold;
+  font-family: "Merriweather", serif;
+}
+
+.modalBody input {
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+.modalBody .formCheck {
+  margin-top: 1rem;
+}
+.modalBody .formCheckFinished {
+  display: flex;
+}
+
+.modalBody .formCheckStillReading {
+  display: flex;
+}
+
+.modalBody label.form-check-label {
+  font-family: "Merriweather", serif;
+  width: 30%;
+}
+
+.modalBody .form-check-input {
+  width: 20%;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+img {
+  width: 75px;
+  height: 75px;
+}
+
+.headerTitle,
+.libraryTitle,
+.footerTitle {
+  font-family: "Merriweather", serif;
+  font-weight: 100;
+  color: orange;
+}
+
+.card {
+  width: 335px;
+  font-family: "Merriweather", serif;
+  background-color: #fcf4e6;
+  border-radius: 10px;
+  margin: 1rem;
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.bookRatingStars--small {
+  fill: gold;
+}
+
+.cardFooter {
+  font-family: "Merriweather", serif;
+  padding: 1rem;
+}
+
+.ratingStar {
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.ratingStar svg {
+  fill: lightgrey;
+  transition: fill 0.3s ease;
+}
+
+.ratingStar.selected svg {
+  fill: gold;
+}
+
+.ratingStar:not(.selected) svg {
+  fill: lightgrey;
+}
