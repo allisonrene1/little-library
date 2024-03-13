@@ -6,8 +6,7 @@ body {
 }
 
 /* section for the buttons */
-.btn,
-.btnCardDelete {
+.btn {
   padding: 8px 8px;
   background-color: #eb9234;
   color: #fffdfa;
@@ -18,9 +17,24 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.btn:active,
-.btnCardDelete:active {
+.btn:active {
   box-shadow: 0 0 10px rgba(201, 75, 2, 0.797);
+}
+
+.btnCardDelete {
+  padding: 8px 8px;
+  color: black;
+  background-color: white;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btnCardDelete:active {
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .libraryDisplayWindow {
@@ -61,7 +75,7 @@ body {
 }
 
 .footer {
-  width: 60%;
+  width: 80%;
 }
 
 .modalFadeWindow {
