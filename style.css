@@ -9,32 +9,18 @@ body {
 .btn,
 .btnCardDelete {
   padding: 8px 8px;
-  color: black;
-  background-color: white;
-  font-size: 15px;
-  font-weight: bold;
-  border-radius: 10px;
-  border: solid 1px black;
-  transition: background-color 0.3s, color 0.3s;
-  -webkit-appearance: none !important;
-  -moz-appearance: none !important;
-  appearance: none !important;
-}
-.btn:hover,
-.btnCardDelete:hover {
   background-color: #eb9234;
   color: #fffdfa;
   border: solid 2px #995002;
-  -webkit-appearance: none !important;
-  -moz-appearance: none !important;
-  appearance: none !important;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: background-color 0.3s, color 0.3s;
 }
+
 .btn:active,
 .btnCardDelete:active {
   box-shadow: 0 0 10px rgba(201, 75, 2, 0.797);
-  -webkit-appearance: none !important;
-  -moz-appearance: none !important;
-  appearance: none !important;
 }
 
 .libraryDisplayWindow {
@@ -56,6 +42,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .headerLogo {
@@ -158,7 +145,7 @@ body {
 }
 
 .modalBody .form-check-input {
-  width: 20%;
+  width: 30%;
 }
 
 .modalFooter {
