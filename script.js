@@ -13,6 +13,7 @@ const modalCancelButton = document.getElementById("addBookModalCancelButton");
 //Variables related to the library display card
 const mainLibrarySection = document.querySelector(".librarySection");
 const emptyLibrary = document.querySelector(".emptyLibrary");
+let emptyLibraryHTML;
 let userStarRating = 0;
 let selectedValue;
 
@@ -44,6 +45,13 @@ modalSaveButton.addEventListener("click", function () {
     headerSection.style.opacity = "1.0";
     mainLibrarySection.style.opacity = "1.0";
     footerSection.style.opacity = "1.0";
+    if (emptyLibraryHTML) {
+      const emptyLibraryElement =
+        mainLibrarySection.querySelector(".emptyLibrary");
+      if (emptyLibraryElement) {
+        emptyLibraryElement.remove();
+      }
+    }
   }
 });
 
@@ -76,7 +84,7 @@ function resetModalWindow() {
 function updateLibraryDisplay() {
   if (userLibraryArray.length === 0) {
     mainLibrarySection.innerHTML = "";
-    const emptyLibraryHTML = `
+    emptyLibraryHTML = `
     <div class="librarySection">
       <div class="emptyLibrary">
         <!-- Appears if the user hasn't logged any books -->
